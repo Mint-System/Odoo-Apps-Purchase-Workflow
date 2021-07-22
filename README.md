@@ -15,3 +15,4 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 | Module                                                  | Summary                                                                        |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | [purchase_partner_incoterm](purchase_partner_incoterm/) | Adds new field to partner form for registering the default pruchase incoterms. |
+| [purchase_order_line_date](purchase_order_line_date/)   | This module ensure that line order date are propagated to stock pickings.      |
