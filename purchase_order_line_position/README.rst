@@ -6,12 +6,17 @@
 Purchase Order Line Position
 ============================
 
-Use purchase order line position for linked receipt and incoming invoice.
+Use purchase order line position for linked delivery orders and outgoing invoices.
 
 .. image:: ./static/description/icon.png
   :height: 100
   :width: 100
   :alt: Icon
+
+Usage
+~~~~~
+
+Use the ``purchase_order_id.get_position(product_id)`` method in linked reports.
 
 Configuration
 ~~~~~~~~~~~~~
