@@ -25,7 +25,7 @@ class PurchaseOrder(models.Model):
     def write(self, values):
         res = super().write(values)
 
-        # If order lines are given, set position
+        # If order lines are given set position
         if values.get('order_line'):
             self.set_position()
 
