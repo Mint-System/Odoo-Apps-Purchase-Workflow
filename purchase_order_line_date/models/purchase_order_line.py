@@ -1,7 +1,7 @@
 import logging
-
 from odoo import models, fields
 from dateutil.relativedelta import relativedelta
+
 
 class PurchaseOrderLine(models.Model):
     _inherit = "purchase.order.line"

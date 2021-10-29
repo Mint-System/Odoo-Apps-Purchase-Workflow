@@ -1,5 +1,6 @@
 from odoo import fields, models, _, api
 
+
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
