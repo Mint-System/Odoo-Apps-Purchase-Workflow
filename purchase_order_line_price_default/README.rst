@@ -6,7 +6,7 @@
 Purchase Order Line Price Default
 =================================
 
-Do not set price if no seller is available.
+Set price to zero if seller is not available.
 
 .. image:: ./static/description/icon.png
   :height: 100

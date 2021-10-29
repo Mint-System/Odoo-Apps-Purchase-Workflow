@@ -2,13 +2,13 @@
     'name': "Purchase Order Line Price Default",
 
     'summary': """
-        Do not set price if no seller is available.
+        Set price to zero if seller is not available.
     """,
     
     'author': 'Mint System GmbH, Odoo Community Association (OCA)',
     'website': 'https://www.mint-system.ch',
     'category': 'Purchse',
-    'version': '14.0.1.0.0',
+    'version': '14.0.1.1.0',
     'license': 'AGPL-3',
     
     'depends': ['purchase'],
