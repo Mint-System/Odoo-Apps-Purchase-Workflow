@@ -1,4 +1,6 @@
 from odoo import fields, models, _, api
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class PurchaseOrder(models.Model):
@@ -26,9 +28,13 @@ class PurchaseOrder(models.Model):
 
         return res
 
-    def get_position(self, product_id):
+    def get_position(self, product_id, product_qty):
         self.ensure_one()
-        for line in self.order_line.filtered(lambda l: l.product_id == product_id):
+        if product_qty:
+            lines = self.order_line.filtered(lambda l: l.product_id == product_id and l.product_qty == product_qty)
+        else:
+            lines = self.order_line.filtered(lambda l: l.product_id == product_id )
+        for line in lines:
             return line.position
         
         return 0
