@@ -1,5 +1,6 @@
 from odoo.tests.common import TransactionCase
 
+
 class TestPurchasePartnerIncoterm(TransactionCase):
     def test_purchase_partner_incoterm(self):
         """
