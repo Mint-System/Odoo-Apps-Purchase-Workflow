@@ -12,4 +12,5 @@
     "data": ["views/res_partner.xml"],
     "installable": True,
     "application": False,
+    "images": ["images/screen.png"],
 }
