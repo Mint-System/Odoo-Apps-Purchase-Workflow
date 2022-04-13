@@ -1,14 +1,15 @@
 {
-    "name": "Purchase Order Line Price Default",
+    "name": "Purchase Order Line Relay Price",
     "summary": """
-        Set price to zero if seller is not available.
+        Calculates the best price possible for a purchase line and notifies the purchaser.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
     "category": "Purchase",
-    "version": "14.0.1.1.0",
+    "version": "14.0.1.0.0",
     "license": "AGPL-3",
     "depends": ["purchase"],
+    "data": ["data/purchase_order_line.xml"],
     "installable": True,
     "application": False,
     "auto_install": False,
