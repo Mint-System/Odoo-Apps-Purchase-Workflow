@@ -36,7 +36,7 @@ msgstr "Anzeigename"
 #: code:addons/purchase_order_line_relay_price/models/purchase_order.py:0
 #, python-format
 msgid "For the %s a lower relay price has been found:"
-msgstr "Für das Produkt %s wurde ein teiferer Staffelpreis gefunden:"
+msgstr "Für das Produkt %s wurde ein tieferer Staffelpreis gefunden:"
 
 #. module: purchase_order_line_relay_price
 #: model:ir.model.fields,field_description:purchase_order_line_relay_price.field_purchase_order__id
