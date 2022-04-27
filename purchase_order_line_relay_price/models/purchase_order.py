@@ -6,6 +6,10 @@ _logger = logging.getLogger(__name__)
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
+    def button_confirm(self):
+        self.check_prices()
+        return super().button_confirm()
+
     def check_prices(self):
         for line in self.order_line:
             # Check prices if product has sellers
@@ -19,8 +23,9 @@ class PurchaseOrder(models.Model):
                 if line.price_subtotal > min_price:
                     
                     # Generate not with lower prices
-                    summary = _('For the %s a lower relay price has been found:') % product_id.display_name
-                    note = "<ul>"
+                    summary = _('Check lower relay price')
+                    note = _('<p>For the product "%s" a lower relay price has been found:</p>') % product_id.display_name
+                    note += "<ul>"
                     for seller in min_seller_ids:
                         note += _('<li>%s %s for %s with delivery time of %s days.</li>') % (seller.min_qty, product_id.uom_id.name, seller.price, seller.delay)
                     note += "</ul>"
