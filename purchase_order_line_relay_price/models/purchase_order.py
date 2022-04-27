@@ -12,17 +12,26 @@ class PurchaseOrder(models.Model):
 
     def check_prices(self):
         for line in self.order_line:
+            
             # Check prices if product has sellers
             if line.product_id.seller_ids:
                 product_id = line.product_id
-                seller_ids = line.product_id.seller_ids.filtered(lambda l: l.min_qty >= line.product_qty and l.price > 0)
+                
+                # Get all sellers with price minimum qty
+                seller_ids = line.product_id.seller_ids.filtered(lambda l: l.min_qty > 0 and l.price > 0)
+                
+                # Move on if sellers found
                 if seller_ids:
                     # Calculate minimal price
-                    min_price = min(seller_ids.mapped(lambda l: l.min_qty * l.price))
-                    min_seller_ids = seller_ids.filtered(lambda l: l.min_qty * l.price == min_price)
-                    if line.price_subtotal > min_price:
+                    # min_price = min(seller_ids.mapped(lambda l: l.min_qty * l.price))
+                    
+                    # Get all sellers with lower price and exluding current price
+                    min_seller_ids = seller_ids.filtered(lambda l: l.min_qty * l.price < line.price_subtotal and l.price != line.price_unit)
+                    
+                    # Move on if sellers with lower price found
+                    if min_seller_ids:
                         
-                        # Generate not with lower prices
+                        # Generate note with lower prices
                         summary = _('Check lower relay price')
                         note = _('<p>For the product "%s" a lower relay price has been found:</p>') % product_id.display_name
                         note += "<ul>"
