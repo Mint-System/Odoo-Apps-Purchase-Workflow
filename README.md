@@ -20,3 +20,4 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 | [purchase_order_line_price_default](purchase_order_line_price_default/) | Set price to zero if seller is not available.                                      |
 | [purchase_order_validate](purchase_order_validate/)                     | Validate purchase order before sending or confirming.                              |
 | [purchase_order_line_relay_price](purchase_order_line_relay_price/)     | Calculates the best price possible for a purchase line and notifies the purchaser. |
+| [purchase_order_notes](purchase_order_notes/)                           | Header and footer note fields for purchase order.                                  |
