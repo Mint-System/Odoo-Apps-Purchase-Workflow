@@ -9,7 +9,7 @@ class PurchaseOrderLine(models.Model):
 
     @api.onchange('product_id')
     def onchange_product_id(self):
-        res = super().product_id_change()
+        res = super().onchange_product_id()
         # Use purchase description if it exists and transalte with partner lang
         if self.product_id.description_purchase:
             product_lang = self.product_id.with_context(
