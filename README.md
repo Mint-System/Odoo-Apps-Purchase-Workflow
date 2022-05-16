@@ -23,3 +23,4 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 | [purchase_order_notes](purchase_order_notes/)                           | Header and footer note fields for purchase order.                                              |
 | [sale_blanket_order_comment](sale_blanket_order_comment/)               | Comment field for purchase order.                                                              |
 | [purchase_order_line_description](purchase_order_line_description/)     | This module sets to use only product's purchase description field on the purchase order lines. |
+| [purchase_order_address](purchase_order_address/)                       | Validate purchase order before sending or confirming.                                          |
