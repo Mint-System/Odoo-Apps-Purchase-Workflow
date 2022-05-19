@@ -33,7 +33,7 @@ msgstr "Zuletzt geändert am"
 #. module: purchase_order_address
 #: model:ir.model.fields,field_description:purchase_order_address.field_purchase_order__partner_order_id
 msgid "Order Address"
-msgstr ""
+msgstr "Bestelladresse"
 
 #. module: purchase_order_address
 #: model:ir.model,name:purchase_order_address.model_purchase_order
