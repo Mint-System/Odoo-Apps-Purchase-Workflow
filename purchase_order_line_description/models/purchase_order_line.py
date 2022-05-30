@@ -1,7 +1,7 @@
 import logging
 _logger = logging.getLogger(__name__)
 from odoo import models, api
-from odoo.tools.misc import get_lang
+import ast
 
 
 class PurchaseOrderLine(models.Model):
@@ -9,13 +9,13 @@ class PurchaseOrderLine(models.Model):
 
     @api.onchange('product_id')
     def onchange_product_id(self):
-        res = super().onchange_product_id()
-        # Use purchase description if it exists and transalte with partner lang
+        hide_ref = ast.literal_eval(self.env["ir.config_parameter"].sudo().get_param("purchase.order.line.hide_ref", "True"))
+        super().onchange_product_id()
+        # Use purchase description if it exists and translate with partner lang
         if self.product_id.description_purchase:
-            product_lang = self.product_id.with_context(
-                lang=get_lang(self.env, self.partner_id.lang).code,
-                partner_id=self.partner_id.id,
-                company_id=self.company_id.id,
+            product = self.product_id.with_context(
+                lang=self.partner_id.lang
             )
-            self.name = product_lang.description_purchase
-        return res
+            self.name = product.description_purchase
+        elif self.product_id and hide_ref:
+            self.name = self.product_id.name
