@@ -12,6 +12,6 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 
 ## Available modules
 
-| Module                                                  | Summary                                                                        |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [purchase_partner_incoterm](purchase_partner_incoterm/) | Adds new field to partner form for registering the default pruchase incoterms. |
+| Module | Summary |
+| --- | --- |
+| [purchase_partner_incoterm](purchase_partner_incoterm) |         Adds new field to partner form for registering the default pruchase incoterms. |
