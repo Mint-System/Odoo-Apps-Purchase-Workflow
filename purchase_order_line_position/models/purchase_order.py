@@ -28,12 +28,12 @@ class PurchaseOrder(models.Model):
 
         return res
 
-    def get_position(self, product_id, product_qty):
+    def get_position(self, product_id, product_qty=False):
         self.ensure_one()
         if product_qty:
             lines = self.order_line.filtered(lambda l: l.product_id == product_id and l.product_qty == product_qty)
         else:
-            lines = self.order_line.filtered(lambda l: l.product_id == product_id )
+            lines = self.order_line.filtered(lambda l: l.product_id == product_id)
         for line in lines:
             return line.position
         
