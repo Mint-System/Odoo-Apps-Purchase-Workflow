@@ -14,13 +14,16 @@ class PurchaseOrder(models.Model):
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):
-        res= super().onchange_partner_id()
-        addr = self.partner_id.address_get(['order'])
-        values = {
-            'partner_order_id': addr['order'],
-        }
-        self.update(values)
-        return res
+        if not self.requisition_id.partner_order_id:
+            res= super().onchange_partner_id()
+            addr = self.partner_id.address_get(['order'])
+            values = {
+                'partner_order_id': addr['order'],
+            }
+            self.update(values)
+            return res
+        else:
+            self._onchange_requisition_id()
 
     def action_rfq_send(self):
         action = super().action_rfq_send()
