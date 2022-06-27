@@ -2,11 +2,11 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-===============================
-Purchase Order Partner Incoterm
-===============================
+=============================
+Purchase Requisition Incoterm
+=============================
 
-This module adds a field on the Sales & Purchases tab of the partner form where you can register the default incoterms for new purchase orders for this customer.
+Set incoterm on purchase contract.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/.
 
