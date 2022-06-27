@@ -30,7 +30,7 @@ msgstr ""
 #. module: purchase_requisition_incoterm
 #: model:ir.model.fields,field_description:purchase_requisition_incoterm.field_purchase_requisition__incoterm_id
 msgid "Incoterm"
-msgstr ""
+msgstr "Lieferbedingung"
 
 #. module: purchase_requisition_incoterm
 #: model:ir.model.fields,field_description:purchase_requisition_incoterm.field_purchase_order____last_update
