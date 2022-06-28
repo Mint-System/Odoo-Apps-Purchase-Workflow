@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_purchase_requisition_form" model="ir.ui.view">
+        <field name="name">purchase_requisition_send.view_purchase_requisition_form</field>
+        <field name="model">purchase.requisition</field>
+        <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form" />
+        <field name="arch" type="xml">
+
+            <header position="inside">
+                <button name="action_order_send" string="Send by Email" type="object" class="btn-primary"/>
+            </header>
+
+            <field name="state_blanket_order" position="attributes">
+                <attribute name="statusbar_visible">draft,sent,ongoing,done</attribute>
+            </field>
+            <field name="state" position="attributes">
+                <attribute name="statusbar_visible">draft,sent,in_progress,open,done</attribute>
+            </field>
+
+            <button name="action_draft" position="attributes">
+                <attribute name="states">cancel,sent</attribute>
+            </button>
+            <button name="action_open" position="attributes">
+                <attribute name="states">in_progress,sent</attribute>
+            </button>
+            <button name="action_done" position="attributes">
+                <attribute name="states">open,ongoing</attribute>
+            </button>
+            <button name="action_cancel" position="attributes">
+                <attribute name="states">draft,in_progress,ongoing,sent</attribute>
+            </button>
+
+        </field>
+    </record>
+
+</odoo>

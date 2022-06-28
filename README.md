@@ -28,4 +28,5 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 | [purchase_requisition_incoterm](purchase_requisition_incoterm) |         Set incoterm on purchase contract. |
 | [purchase_requisition_notes](purchase_requisition_notes) |         Add notes on purchase agreement and copy them to purchase orders. |
 | [purchase_requisition_order_address](purchase_requisition_order_address) |         Set order address on purchase agreement and copy to order. |
+| [purchase_requisition_send](purchase_requisition_send) |         Add send action to purchase contract. |
 | [purchase_requisition_tag](purchase_requisition_tag) |         Set tags on purchase agreement and copy them to purchase order. |
