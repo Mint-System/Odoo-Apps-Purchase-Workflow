@@ -8,6 +8,7 @@ class PurchaseOrder(models.Model):
 
     @api.onchange('requisition_id')
     def _onchange_requisition_id(self):
-        super(PurchaseOrder, self)._onchange_requisition_id()
+        res = super(PurchaseOrder, self)._onchange_requisition_id()
         if self.requisition_id and not self.tag_ids:
             self.tag_ids = self.requisition_id.tag_ids
+        return res
