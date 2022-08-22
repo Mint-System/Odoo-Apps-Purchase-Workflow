@@ -6,13 +6,13 @@
         <field name="model">purchase.requisition</field>
         <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form" />
         <field name="arch" type="xml">
-            <field name="company_id" position="after">
+            <group name="other_info" position="inside">
                 <field
                     name="tag_ids"
                     widget="many2many_tags"
                     options="{'color_field': 'color', 'no_create_edit': True}"
                 />
-            </field>
+            </group>
         </field>
     </record>
 
