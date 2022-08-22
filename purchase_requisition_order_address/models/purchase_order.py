@@ -8,6 +8,8 @@ class PurchaseOrder(models.Model):
 
     @api.onchange('requisition_id')
     def _onchange_requisition_id(self):
-        super(PurchaseOrder, self)._onchange_requisition_id()
-        if self.requisition_id and not self.partner_order_id:
+        """Always overrite order partner from purchase contract."""
+        res = super(PurchaseOrder, self)._onchange_requisition_id()
+        if self.requisition_id and self.requisition_id.partner_order_id:
             self.partner_order_id = self.requisition_id.partner_order_id
+        return res
