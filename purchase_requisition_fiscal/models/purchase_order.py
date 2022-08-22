@@ -8,6 +8,8 @@ class PurchaseOrder(models.Model):
 
     @api.onchange('requisition_id')
     def _onchange_requisition_id(self):
-        super(PurchaseOrder, self)._onchange_requisition_id()
-        if self.requisition_id and not self.fiscal_position_id:
+        """Always overwrite fiscal position from purchase contract."""
+        res = super(PurchaseOrder, self)._onchange_requisition_id()
+        if self.requisition_id and self.requisition_id.fiscal_position_id:
             self.fiscal_position_id = self.requisition_id.fiscal_position_id
+        return res

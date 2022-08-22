@@ -6,9 +6,9 @@
         <field name="model">purchase.requisition</field>
         <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form" />
         <field name="arch" type="xml">
-            <field name="company_id" position="after">
+            <group name="invoice_info" position="inside">
                 <field name="fiscal_position_id"/>
-            </field>
+            </group>
         </field>
     </record>
 
