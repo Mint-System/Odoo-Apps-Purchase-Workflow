@@ -15,7 +15,7 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 | Module | Summary |
 | --- | --- |
 | [purchase_order_address](purchase_order_address) |         Validate purchase order before sending or confirming. |
-| [purchase_order_comment](purchase_order_comment) |         Comment field for purchase order. |
+| [purchase_order_comment](purchase_order_comment) |         Comment field for purchase order and contract. |
 | [purchase_order_line_date](purchase_order_line_date) |         This module ensure that line order date are propagated to stock pickings. |
 | [purchase_order_line_description](purchase_order_line_description) |         This module sets to use only product's purchase description field on the purchase order lines. |
 | [purchase_order_line_position](purchase_order_line_position) |         Use purchase order line position for linked delivery orders and outgoing invoices. |
