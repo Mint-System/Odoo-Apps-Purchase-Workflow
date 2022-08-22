@@ -8,7 +8,8 @@ class PurchaseOrder(models.Model):
 
     @api.onchange('requisition_id')
     def _onchange_requisition_id(self):
+        """Always override payment term from purchase contract."""
         res = super(PurchaseOrder, self)._onchange_requisition_id()
-        if not self.payment_term_id and self.requisition_id:
+        if not self.payment_term_id and self.requisition_id.payment_term_id:
             self.payment_term_id = self.requisition_id.payment_term_id
         return res
