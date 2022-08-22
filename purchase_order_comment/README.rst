@@ -6,7 +6,7 @@
 Purchase Order Comment
 ======================
 
-Comment field for purchase order.
+Comment field for purchase order and contract.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/.
 
