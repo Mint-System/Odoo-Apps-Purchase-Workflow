@@ -5,18 +5,9 @@
         <field name="model">purchase.requisition</field>
         <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form" />
         <field name="arch" type="xml">
-            <notebook position="inside">
-                <page string="Other Information" name="purchase_requisition_information">
-                    <group>
-                        <group name="other_info">
-                            <field name="comment" />
-                        </group>
-                    </group>
-                </page>
-            </notebook>
+            <group name="other_info" position="inside">
+                <field name="comment" />
+            </group>
         </field>
     </record>
-
-
-
 </odoo>

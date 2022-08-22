@@ -6,9 +6,9 @@
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
     "category": "Purchase",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "license": "AGPL-3",
-    "depends": ["purchase_requisition"],
+    "depends": ["purchase_requisition", "purchase_requisition_other_information_page"],
     "data": [
         "views/purchase_order_form.xml",
         "views/view_purchase_requisition_form.xml",
