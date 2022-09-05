@@ -13,7 +13,7 @@ class PurchaseRequisition(models.Model):
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",)
 
     @api.onchange('vendor_id')
-    def _onchange_vendor_id(self):
+    def _onchange_partner_order_id(self):
         addr = self.vendor_id.address_get(['order'])
         values = {
             'partner_order_id': addr['order'],
