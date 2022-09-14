@@ -17,7 +17,7 @@ class PurchaseOrder(models.Model):
     @api.onchange('requisition_id')
     def _onchange_requisition_id(self):
         """Always overwrite order partner from purchase contract."""
-        res = super(PurchaseOrder, self)._onchange_requisition_id()
+        res = super()._onchange_requisition_id()
         if self.requisition_id and self.requisition_id.partner_order_id:
             self.partner_order_id = self.requisition_id.partner_order_id
         return res

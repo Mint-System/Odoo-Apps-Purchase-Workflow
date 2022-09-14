@@ -9,7 +9,7 @@ class PurchaseOrder(models.Model):
     @api.onchange('requisition_id')
     def _onchange_requisition_id(self):
         """Always override incoterm from purchase contract."""
-        res = super(PurchaseOrder, self)._onchange_requisition_id()
+        res = super()._onchange_requisition_id()
         # _logger.warning(['purchase_requisition_incoterm', self.incoterm_id, self.requisition_id.incoterm_id])
         if not self.incoterm_id and self.requisition_id.incoterm_id:
             self.incoterm_id = self.requisition_id.incoterm_id
