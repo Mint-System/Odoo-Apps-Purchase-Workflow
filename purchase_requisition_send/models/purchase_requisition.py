@@ -3,12 +3,15 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
+PURCHASE_REQUISITION_STATES = [
+    ('sent', 'Sent'),
+]
+
 class PurchaseRequisition(models.Model):
     _inherit = "purchase.requisition"
     
-    state = fields.Selection(selection_add=[
-        ('sent', 'Sent'),
-    ], ondelete={'sent': 'cascade'})
+    state = fields.Selection(selection_add=PURCHASE_REQUISITION_STATES, ondelete={'sent': 'set default'})
+    state_blanket_order = fields.Selection(selection_add=PURCHASE_REQUISITION_STATES)
 
     @api.model
     def create(self,vals):
@@ -56,4 +59,4 @@ class PurchaseRequisition(models.Model):
     def message_post(self, **kwargs):
         if self.env.context.get('mark_pr_as_sent'):
             self.filtered(lambda o: o.state == 'draft').write({'state': 'sent'})
-        return super(PurchaseRequisition, self.with_context(mail_post_autofollow=True)).message_post(**kwargs)
+        return super().message_post(**kwargs)
