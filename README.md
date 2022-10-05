@@ -23,6 +23,7 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 | [purchase_order_line_relay_price](purchase_order_line_relay_price) |         Calculates the best price possible for a purchase line and notifies the purchaser. |
 | [purchase_order_notes](purchase_order_notes) |         Header and footer note fields for purchase order. |
 | [purchase_order_partner_incoterm](purchase_order_partner_incoterm) |         Adds new field to partner form for registering the default pruchase incoterms. |
+| [purchase_order_partner_shipping](purchase_order_partner_shipping) |         Alternative shipping address for purchase orders. |
 | [purchase_order_validate](purchase_order_validate) |         Validate purchase order before sending or confirming. |
 | [purchase_requisition_fiscal](purchase_requisition_fiscal) |         Set tax code on purchse contract. |
 | [purchase_requisition_incoterm](purchase_requisition_incoterm) |         Set incoterm on purchase contract. |
