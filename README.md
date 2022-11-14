@@ -34,3 +34,4 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 | [purchase_requisition_reference](purchase_requisition_reference) |         Add vendor reference field to purchase agreement. |
 | [purchase_requisition_send](purchase_requisition_send) |         Add send action to purchase contract. |
 | [purchase_requisition_tag](purchase_requisition_tag) |         Set tags on purchase agreement and copy them to purchase order. |
+| [purchase_requisition_total](purchase_requisition_total) |         Caclulate taxed and untaxed total for order and lines. |

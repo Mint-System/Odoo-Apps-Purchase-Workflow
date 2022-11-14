@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_purchase_requisition_form" model="ir.ui.view">
+        <field name="name">purchase_requisition_total.view_purchase_requisition_form</field>
+        <field name="model">purchase.requisition</field>
+        <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form" />
+        <field name="arch" type="xml">
+
+            <field name="company_id" position="after">
+                <field
+                    name="currency_id"
+                    groups="base.group_multi_currency"
+                    options="{'no_create': True}"
+                />
+            </field>
+
+            <field name="line_ids" position="after">
+                <group class="oe_subtotal_footer oe_right">
+                    <field
+                        name="amount_untaxed"
+                        widget="monetary"
+                        options="{'currency_field': 'currency_id'}"
+                    />
+                    <field
+                        name="amount_tax"
+                        widget="monetary"
+                        options="{'currency_field': 'currency_id'}"
+                    />
+                    <div class="oe_subtotal_footer_separator oe_inline">
+                        <label for="amount_total" />
+                    </div>
+                    <field
+                        name="amount_total"
+                        nolabel="1"
+                        class="oe_subtotal_footer_separator"
+                        widget="monetary"
+                        options="{'currency_field': 'currency_id'}"
+                    />
+                </group>
+            </field>
+
+            <field name="price_unit" position="after">
+                <field name="taxes_id"
+                    widget="many2many_tags"
+                    domain="[('type_tax_use','=','purchase')]"
+                    context="{'default_type_tax_use': 'purchase'}"
+                    options="{'no_create': True}"
+                />
+                <field name="price_subtotal" widget="monetary" />
+            </field>
+
+        </field>
+    </record>
+
+    <record id="view_purchase_requisition_tree" model="ir.ui.view">
+        <field name="name">purchase_requisition_total.view_purchase_requisition_tree</field>
+        <field name="model">purchase.requisition</field>
+        <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_tree" />
+        <field name="arch" type="xml">
+            <field name="origin" position="after">
+                <field name="amount_untaxed" sum="Total Untaxed amount" string="Untaxed" widget="monetary" optional="hide"/>
+                <field name="amount_total" sum="Total amount" widget="monetary" optional="show" decoration-bf="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
