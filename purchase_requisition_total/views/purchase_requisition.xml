@@ -61,6 +61,7 @@
             <field name="origin" position="after">
                 <field name="amount_untaxed" sum="Total Untaxed amount" string="Untaxed" widget="monetary" optional="hide"/>
                 <field name="amount_total" sum="Total amount" widget="monetary" optional="show" decoration-bf="1"/>
+                <field name="currency_id" invisible="1"/>
             </field>
         </field>
     </record>
