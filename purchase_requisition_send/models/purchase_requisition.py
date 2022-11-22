@@ -57,6 +57,7 @@ class PurchaseRequisition(models.Model):
 
     @api.returns('mail.message', lambda value: value.id)
     def message_post(self, **kwargs):
+        _logger.warning(self.env.context)
         if self.env.context.get('mark_pr_as_sent'):
-            self.filtered(lambda o: o.state == 'draft').write({'state': 'sent'})
+            self.filtered(lambda o: o.state in ['draft', 'in_progress']).write({'state': 'sent'})
         return super().message_post(**kwargs)
