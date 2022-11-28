@@ -27,6 +27,7 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 | [purchase_order_validate](purchase_order_validate) |         Validate purchase order before sending or confirming. |
 | [purchase_requisition_fiscal](purchase_requisition_fiscal) |         Set tax code on purchse contract. |
 | [purchase_requisition_incoterm](purchase_requisition_incoterm) |         Set incoterm on purchase contract. |
+| [purchase_requisition_line_description](purchase_requisition_line_description) |         Set description field on purchase contract lines from purchase description. |
 | [purchase_requisition_notes](purchase_requisition_notes) |         Add notes on purchase agreement and copy them to purchase orders. |
 | [purchase_requisition_order_address](purchase_requisition_order_address) |         Set order address on purchase agreement and copy to order. |
 | [purchase_requisition_other_information_page](purchase_requisition_other_information_page) |         Adds and "Other Information" tab to the purchase agreement form. |

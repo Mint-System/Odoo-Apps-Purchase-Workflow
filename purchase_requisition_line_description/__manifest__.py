@@ -1,14 +1,15 @@
 {
-    "name": "Purchase Order Line Description",
+    "name": "Purchase Requisition Line Description",
     "summary": """
-        This module sets to use only product's purchase description field on the purchase order lines.
+        Set description field on purchase contract lines from purchase description.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
     "category": "Purchase",
-    "version": "14.0.2.0.1",
+    "version": "14.0.1.0.0",
     "license": "AGPL-3",
-    "depends": ["purchase"],
+    "depends": ["purchase_requisition"],
+    "data": ["views/purchase_requisition.xml"],
     "installable": True,
     "application": False,
     "auto_install": False,

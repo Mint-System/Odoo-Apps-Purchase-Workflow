@@ -20,8 +20,6 @@ class PurchaseOrderLine(models.Model):
         if supplier_info:
             supplier_info = supplier_info[0]
 
-        _logger.warning([self.product_id.seller_ids,supplier_info])
-
         # Set supplier product code as name
         if supplier_info.product_code and not hide_ref:
             self.name = "[" + supplier_info.product_code + "] "
