@@ -3,15 +3,17 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-PURCHASE_REQUISITION_STATES = [
-    ('sent', 'Sent'),
-]
-
 class PurchaseRequisition(models.Model):
     _inherit = "purchase.requisition"
     
-    state = fields.Selection(selection_add=PURCHASE_REQUISITION_STATES, ondelete={'sent': 'set default'})
-    state_blanket_order = fields.Selection(selection_add=PURCHASE_REQUISITION_STATES)
+    state = fields.Selection(selection_add=[
+        ('sent', 'Sent'),
+        ('ongoing',)
+    ], ondelete={'sent': 'cascade'})
+    state_blanket_order = fields.Selection(selection_add=[
+        ('sent', 'Sent'),
+        ('ongoing',)
+    ], ondelete={'sent': 'cascade'})
 
     @api.model
     def create(self,vals):
