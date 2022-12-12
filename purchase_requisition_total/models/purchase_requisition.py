@@ -34,6 +34,22 @@ class PurchaseRequisition(models.Model):
     amount_total = fields.Monetary(
         string='Total', store=True, readonly=True, compute='_compute_amount_all'
     )
+    fiscal_position_id = fields.Many2one('account.fiscal.position', 
+        string='Fiscal Position',
+        domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]"
+    )
+
+    @api.onchange('vendor_id', 'company_id')
+    def _onchange_vendor(self):
+        super()._onchange_vendor()
+        self = self.with_company(self.company_id)
+        if not self.vendor_id:
+            self.fiscal_position_id = False
+            self.currency_id = self.env.company.currency_id.id
+        else:
+            self.fiscal_position_id = self.env['account.fiscal.position'].get_fiscal_position(self.vendor_id.id)
+            self.currency_id = self.vendor_id.property_purchase_currency_id.id or self.env.company.currency_id.id
+        return {}
 
 class PurchaseRequisitionLine(models.Model):
     _inherit = 'purchase.requisition.line'
@@ -71,3 +87,16 @@ class PurchaseRequisitionLine(models.Model):
     )
     price_total = fields.Monetary(compute='_compute_amount', string='Total', store=True)
     price_tax = fields.Float(compute='_compute_amount', string='Tax', store=True)
+
+    @api.onchange('product_id')
+    def _onchange_product_id(self):
+        super()._onchange_product_id()
+        self._compute_tax_id()
+
+    def _compute_tax_id(self):
+        for line in self:
+            line = line.with_company(line.company_id)
+            fpos = line.requisition_id.fiscal_position_id or line.requisition_id.fiscal_position_id.get_fiscal_position(line.requisition_id.vendor_id.id)
+            # Filter taxes by company
+            taxes = line.product_id.supplier_taxes_id.filtered(lambda r: r.company_id == line.env.company)
+            line.taxes_id = fpos.map_tax(taxes, line.product_id, line.requisition_id.vendor_id)

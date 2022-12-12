@@ -8,11 +8,12 @@
         <field name="arch" type="xml">
 
             <field name="company_id" position="after">
-                <field
+                <!-- <field
                     name="currency_id"
                     groups="base.group_multi_currency"
                     options="{'no_create': True}"
-                />
+                /> -->
+                <field name="fiscal_position_id" />
             </field>
 
             <field name="line_ids" position="after">
