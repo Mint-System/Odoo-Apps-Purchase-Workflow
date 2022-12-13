@@ -7,10 +7,6 @@
         <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form" />
         <field name="arch" type="xml">
 
-            <field name="origin" position="after">
-                <field name="fiscal_position_id" />
-            </field>
-
             <field name="line_ids" position="after">
                 <group class="oe_subtotal_footer oe_right">
                     <field
