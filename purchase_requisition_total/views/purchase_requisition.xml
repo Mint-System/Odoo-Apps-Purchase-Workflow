@@ -7,12 +7,7 @@
         <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form" />
         <field name="arch" type="xml">
 
-            <field name="company_id" position="after">
-                <!-- <field
-                    name="currency_id"
-                    groups="base.group_multi_currency"
-                    options="{'no_create': True}"
-                /> -->
+            <field name="origin" position="after">
                 <field name="fiscal_position_id" />
             </field>
 
