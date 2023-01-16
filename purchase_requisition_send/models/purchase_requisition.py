@@ -6,6 +6,7 @@ _logger = logging.getLogger(__name__)
 class PurchaseRequisition(models.Model):
     _inherit = "purchase.requisition"
     
+    name = fields.Char(default=_('New'))
     state = fields.Selection(selection_add=[
         ('sent', 'Sent'),
         ('ongoing',)
@@ -18,8 +19,8 @@ class PurchaseRequisition(models.Model):
     @api.model
     def create(self,vals):
         """Generate name from sequence on create"""
-        _logger.warning([vals,self.is_quantity_copy])
-        if vals.get('name', _('New')) ==  _('New') and vals.get('type_id'):
+        # _logger.warning([_('New'), vals.get('name', _('New')), vals.get('type_id'), (vals.get('name', _('New')) ==  _('New')) and vals.get('type_id')])
+        if (vals.get('name', _('New')) ==  _('New')) and vals.get('type_id'):
             type_id = self.env['purchase.requisition.type'].browse(vals['type_id'])
             if type_id.quantity_copy != 'none':
                 vals['name'] = self.env['ir.sequence'].next_by_code('purchase.requisition.purchase.tender')
