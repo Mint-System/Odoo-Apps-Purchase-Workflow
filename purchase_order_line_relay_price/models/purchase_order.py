@@ -10,21 +10,25 @@ class PurchaseOrder(models.Model):
         self.check_prices()
         return super().button_confirm()
 
-    def check_prices(self):
+    def check_prices(self, date=None):
+        if date is None:
+            date = fields.Date.context_today(self)
         for line in self.order_line:
             
             # Check prices if product has sellers
             if line.product_id.seller_ids:
                 product_id = line.product_id
                 
-                # Get all sellers with price minimum qty
+                # Get all sellers with positive price and minimum qty
                 seller_ids = line.product_id.seller_ids.filtered(lambda l: l.min_qty > 0 and l.price > 0)
                 
                 # Move on if sellers found
                 if seller_ids:
-                    # Calculate minimal price
-                    # min_price = min(seller_ids.mapped(lambda l: l.min_qty * l.price))
-                    
+
+                    # Check start and end date of sellers
+                    seller_ids = seller_ids.filtered(lambda l: not l.date_start or l.date_start <= date)
+                    seller_ids = seller_ids.filtered(lambda l: not l.date_end or l.date_end >= date)
+
                     # Get all sellers with lower price and exluding current price
                     min_seller_ids = seller_ids.filtered(lambda l: l.min_qty * l.price < line.price_subtotal and l.price != line.price_unit)
                     
