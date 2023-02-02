@@ -11,3 +11,7 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 ```
 
 ## Available modules
+
+| Module | Summary |
+| --- | --- |
+| [purchase_stock_sale_owner](purchase_stock_sale_owner) |         Set shipping partner of first linked sale order as consigment owner. |
