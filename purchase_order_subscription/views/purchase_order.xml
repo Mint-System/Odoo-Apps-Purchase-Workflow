@@ -6,7 +6,7 @@
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.purchase_order_form" />
         <field name="arch" type="xml">
-            <field name="date_planned" position="before">
+            <field name="date_order" position="after">
                 <label name="recurrence_label" for="recurrence_id" />
                 <div class="o_row" name="recurrence_block">
                     <field name="recurrence_id" options="{'no_create': True}" />
@@ -18,10 +18,14 @@
                         attrs="{'invisible': [('recurrence_id', '=', False)]}"
                     />
                 </div>
+                <field
+                    name="next_invoice_date"
+                    attrs="{'invisible': [('recurrence_id', '=', False)]}"
+                />
             </field>
             <field name="invoice_status" position="before">
                 <field
-                    name="end_date"
+                    name="start_date"
                     attrs="{'invisible': [('recurrence_id', '=', False)]}"
                 />
             </field>
