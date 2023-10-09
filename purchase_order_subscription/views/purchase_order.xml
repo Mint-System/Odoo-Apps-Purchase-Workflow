@@ -20,7 +20,7 @@
                 </div>
                 <field
                     name="next_invoice_date"
-                    attrs="{'invisible': [('recurrence_id', '=', False)]}"
+                    attrs="{'invisible': ['|', ('recurrence_id', '=', False), ('state', 'not in', ['purchase','done'])]}"
                 />
             </field>
             <field name="invoice_status" position="before">
