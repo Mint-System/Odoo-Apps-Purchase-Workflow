@@ -6,18 +6,9 @@
 Purchase Order Subscription
 ===========================
 
-Module summary.
+Setup recurring purchase orders.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/purchase-order-subscription.html
-
-Usage
-~~~~~
-
-Clone module into Odoo addon directory.
-
-.. code-block:: bash
-
-    git clone git@github.com:mint-system/odoo-app-purchase-order-subscription.git ./addons/purchase_order_subscription
 
 Configuration
 ~~~~~~~~~~~~~
