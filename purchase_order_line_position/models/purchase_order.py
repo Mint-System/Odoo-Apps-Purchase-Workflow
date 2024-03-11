@@ -1,10 +1,12 @@
-from odoo import fields, models, _, api
 import logging
+
+from odoo import api, fields, models
+
 _logger = logging.getLogger(__name__)
 
 
 class PurchaseOrder(models.Model):
-    _inherit = 'purchase.order'
+    _inherit = "purchase.order"
 
     def set_position(self):
         for order in self:
@@ -27,14 +29,17 @@ class PurchaseOrder(models.Model):
     def get_position(self, product_id, product_qty=False):
         self.ensure_one()
         if product_qty:
-            lines = self.order_line.filtered(lambda l: l.product_id == product_id and l.product_qty == product_qty)
+            lines = self.order_line.filtered(
+                lambda l: l.product_id == product_id and l.product_qty == product_qty
+            )
         else:
             lines = self.order_line.filtered(lambda l: l.product_id == product_id)
         for line in lines:
             return line.position
         return 0
 
-class PurchaseOrderLine(models.Model):
-    _inherit = 'purchase.order.line'
 
-    position = fields.Char('Pos', readonly=True)
+class PurchaseOrderLine(models.Model):
+    _inherit = "purchase.order.line"
+
+    position = fields.Char("Pos", readonly=True)
