@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="email_template_edi_purchase" model="mail.template">
+        <field name="partner_to"></field>
+    </record>
+</odoo>
