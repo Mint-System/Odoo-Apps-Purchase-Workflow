@@ -1,0 +1,6 @@
+- Open products, choose Cabinet with Doors
+- In the Purchase tab create a description
+- Open Purchase > Orders > Requests for Quotation
+- Create a new Request for Quotation
+- Product lines include a Description field with default product description + the description set on the product
+- Confirm the Purchase Order, the Description is copied also to the product line on the delivery order
