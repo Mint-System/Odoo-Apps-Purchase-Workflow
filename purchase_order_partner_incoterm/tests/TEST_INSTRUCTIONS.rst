@@ -1,0 +1,5 @@
+- Open a contact for Azure Interior
+- In the Sale&Purchase tab set the default incoterm
+- Open Purchase > Orders > Requests for Quotation
+- Create a new Request for Quotation from Azure Interior
+- In the Other Information tab the Incoterm is set according to the default purchase incoterm set on the contact
