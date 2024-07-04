@@ -7,7 +7,10 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     comment = fields.Text(
-        string="Comment", readonly=False, tracking=True, compute="_compute_comment", store=True
+        readonly=False,
+        tracking=True,
+        compute="_compute_comment",
+        store=True,
     )
 
     @api.depends("requisition_id")

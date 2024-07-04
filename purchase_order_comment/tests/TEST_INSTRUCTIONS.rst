@@ -1,4 +1,6 @@
-- Open Purchase > Orders > Requests for Quotation
-- Create a new request, fill in the details
+- Open Settings > Technical > System Parameters
+- Create a new system parameter with key purchase.order.copy_requisition_comment and value True
+- Open Purchase > Orders > Blanket Orders
+- Create a new Blanket Order, fill in the details
 - In the Other Information tab write a comment in the respective field
-- Confirm the Request for Quotation, the comment is copied to the Purchase Order
+- Confirm the Request for Quotation by pressing New Quotation button, the comment is copied to the Purchase Order
