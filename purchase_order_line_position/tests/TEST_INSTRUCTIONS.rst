@@ -1,0 +1,5 @@
+- Open Purchase > Orders > Requests for Quotation
+- Create a new Request for Quotation
+- Add product lines, the order line positions will be set automatically
+- Move the position of the order lines
+- Manually trigger a recalculation of position number through Actions > Set Position Numbers
