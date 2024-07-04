@@ -1,0 +1,4 @@
+- Open Purchase > Orders > Requests for Quotation
+- Create a new request, fill in the details
+- In the Other Information tab write a comment in the respective field
+- Confirm the Request for Quotation, the comment is copied to the Purchase Order
