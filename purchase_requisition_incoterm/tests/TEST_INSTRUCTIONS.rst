@@ -1,0 +1,3 @@
+- Open Purchase > Orders > Requests for Quotation
+- Under the Other Information tab the Incoterm can be set
+- Confirm the order
