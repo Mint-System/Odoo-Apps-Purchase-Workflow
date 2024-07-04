@@ -14,6 +14,5 @@ git clone git@github.com:mint-system/odoo-apps-purchase-workflow.git ./addons/pu
 
 | Module | Summary |
 | --- | --- |
-| [purchase_order_address](purchase_order_address) |         Validate purchase order before sending or confirming. |
 | [purchase_order_line_position](purchase_order_line_position) |         Use purchase order line position for deliveries and outgoing invoices. |
 | [purchase_order_subscription](purchase_order_subscription) |         Setup recurring purchase orders. |
