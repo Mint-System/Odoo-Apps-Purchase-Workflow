@@ -1,7 +1,7 @@
 {
     "name": "Purchase Requisition Fiscal",
     "summary": """
-        Set tax code on purchse contract.
+        Set tax code on purchase contract.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",

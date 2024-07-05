@@ -6,10 +6,9 @@
 Purchase Requisition Fiscal
 ===========================
 
-Set tax code on purchse contract.
+Set tax code on purchase contract.
 
-For a detailed documentation have a look at
-https://www.odoo-wiki.org/purchase-requisition-fiscal.html
+For a detailed documentation have a look at https://www.odoo-wiki.org/purchase-requisition-fiscal.html
 
 Configuration
 ~~~~~~~~~~~~~
