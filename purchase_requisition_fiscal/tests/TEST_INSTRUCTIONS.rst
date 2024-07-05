@@ -1,3 +1,6 @@
-- Open Purchase > Orders > Requests for Quotation
-- Under the Other Information tab the Fiscal Position can be set
-- Confirm the order
+- Open contact for Deco Addict, and in the Sales&Purchase tab set the default Fiscal Position
+- Open Purchase > Orders > Blanket Orders
+- Create a new Blanket Order for Deco Addict
+- Under the Other Information tab the Fiscal Position is set from the contact
+- Confirm the order, and get a New Quotation
+- The Fiscal Position info is carried also to the RFQ and Purchase Order
