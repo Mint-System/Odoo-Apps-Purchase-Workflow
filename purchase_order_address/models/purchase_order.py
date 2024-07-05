@@ -35,12 +35,3 @@ class PurchaseOrder(models.Model):
         ctx["default_partner_ids"] = [self.partner_order_id.id]
         action.update({"context": ctx})
         return action
-
-    @api.model
-    def create(self, vals):
-        """
-        Ensure the order partner is set when PO is created from procurement.
-        """
-        res = super(PurchaseOrder, self).create(vals)
-        res._compute_partner_order_id()
-        return res
