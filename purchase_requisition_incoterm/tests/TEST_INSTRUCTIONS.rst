@@ -1,3 +1,4 @@
-- Open Purchase > Orders > Requests for Quotation
-- Under the Other Information tab the Incoterm can be set
-- Confirm the order
+- Open contact for Deco Addict, and in the Sales&Purchase tab set the default incoterm
+- Open Purchase > Orders > Blanket Orders
+- Under the Other Information tab the default incoterm can be seen
+- Confirm the order, the Purchase Order will have the default incoterm set
