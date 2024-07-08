@@ -21,13 +21,3 @@ class PurchaseOrder(models.Model):
                 order.incoterm_id = order.requisition_id.incoterm_id
             elif not order.requisition_id:
                 order.incoterm_id = False
-
-    @api.model
-    def create(self, vals):
-        if vals.get("requisition_id"):
-            requisition = self.env["purchase.requisition"].browse(
-                vals["requisition_id"]
-            )
-            if requisition.incoterm_id:
-                vals["incoterm_id"] = requisition.incoterm_id.id
-        return super(PurchaseOrder, self).create(vals)

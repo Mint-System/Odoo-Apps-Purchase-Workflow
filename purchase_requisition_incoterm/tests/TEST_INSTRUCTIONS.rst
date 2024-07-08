@@ -1,4 +1,4 @@
-- Open contact for Deco Addict, and in the Sales&Purchase tab set the default incoterm
+- Open contact for Deco Addict, and in the Sales&Purchase tab set the default incoterm COST AND FREIGHT
 - Open Purchase > Orders > Blanket Orders
 - Under the Other Information tab the default incoterm can be seen
-- Confirm the order, the Purchase Order will have the default incoterm set
+- Confirm the order, the Purchase Order will have the default incoterm set from the partner record
