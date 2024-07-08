@@ -1,0 +1,3 @@
+- Open a contact for Deco Addict, set the Order Address
+- Open Purchase > Orders > Blanket Orders
+- Create a new Blanket Order for Deco Addict, the Order Address is copied from the contact
