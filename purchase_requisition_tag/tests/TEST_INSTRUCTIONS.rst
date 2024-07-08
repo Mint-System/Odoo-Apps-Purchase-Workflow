@@ -1,0 +1,4 @@
+- Open Purchase > Orders > Blanket Orders
+- Create a new Blanket Order or open an existing one
+- In the Other Information tab, the Tags can be set
+- Save the changes and confirm RFQ and Purchase Order, the Tags are copied from the Blanket Order
