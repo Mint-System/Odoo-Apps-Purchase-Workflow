@@ -20,12 +20,12 @@ class PurchaseOrder(models.Model):
             else:
                 order.fiscal_position_id = False
 
-    @api.model
-    def create(self, vals):
-        if vals.get("requisition_id"):
-            requisition = self.env["purchase.requisition"].browse(
-                vals["requisition_id"]
-            )
-            if requisition.fiscal_position_id:
-                vals["fiscal_position_id"] = requisition.fiscal_position_id.id
-        return super(PurchaseOrder, self).create(vals)
+    # @api.model
+    # def create(self, vals):
+    #     if vals.get("requisition_id"):
+    #         requisition = self.env["purchase.requisition"].browse(
+    #             vals["requisition_id"]
+    #         )
+    #         if requisition.fiscal_position_id:
+    #             vals["fiscal_position_id"] = requisition.fiscal_position_id.id
+    #     return super(PurchaseOrder, self).create(vals)
