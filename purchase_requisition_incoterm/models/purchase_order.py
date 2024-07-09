@@ -8,14 +8,9 @@ _logger = logging.getLogger(__name__)
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    incoterm_id = fields.Many2one(
-        "account.incoterms",
-        compute="_compute_incoterm_id",
-        store=True,
-    )
-
     @api.depends("requisition_id")
     def _compute_incoterm_id(self):
+        super()._compute_incoterm_id()
         for order in self:
             if order.requisition_id and order.requisition_id.incoterm_id:
                 order.incoterm_id = order.requisition_id.incoterm_id

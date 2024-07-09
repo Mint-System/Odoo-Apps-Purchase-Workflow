@@ -12,6 +12,7 @@ class PurchaseRequisition(models.Model):
         "account.incoterms",
         compute="_compute_incoterm_id",
         store=True,
+        readonly=False,
     )
 
     @api.depends("vendor_id")
