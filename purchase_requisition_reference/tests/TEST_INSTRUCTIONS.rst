@@ -1,0 +1,6 @@
+- Open Settings > Technical > System Parameters
+- Create a new System Parameter with key purchase_requisition_reference.copy_reference and value True
+- Open Purchase > Orders > Blanket Orders
+- Create a new Blanket Order for Azure interior, set a Vendor Reference in the respective field
+- Confirm the order and create a new RFQ, the Vendor Reference field is copied from the Blanket Order
+- Confirm the quotation and check that the Vendor Reference field is also copied to the Purchase Order
