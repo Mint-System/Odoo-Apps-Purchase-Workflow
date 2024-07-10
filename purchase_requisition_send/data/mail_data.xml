@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo noupdate="0">
+<odoo noupdate="1">
     <record id="email_template_purchase_requisition" model="mail.template">
         <field name="name">Purchase Contract: Send by email</field>
         <field name="model_id" ref="purchase_requisition.model_purchase_requisition" />
