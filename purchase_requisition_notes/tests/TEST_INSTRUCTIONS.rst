@@ -2,4 +2,3 @@
 - Create a new Blanket Order
 - Under the Notes tab enter a note
 - Create New Quotation, and check the Notes tab, the note from Blanket order is copied
-- Confirm the Purchase Order, open the Notes tab, the note from Blanket order is copied

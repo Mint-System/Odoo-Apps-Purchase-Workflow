@@ -19,10 +19,3 @@ class PurchaseOrder(models.Model):
                     order.note_header = order.requisition_id.note_header
                 if not order.note_footer or order.note_footer == "<p><br></p>":
                     order.note_footer = order.requisition_id.note_footer
-            else:
-                order.note_header = (
-                    order.note_header if order.note_header else "<p><br></p>"
-                )
-                order.note_footer = (
-                    order.note_footer if order.note_footer else "<p><br></p>"
-                )
