@@ -9,7 +9,7 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     incoterm_id = fields.Many2one(
-        "account.incoterms", compute="_compute_incoterm_id", store=True
+        "account.incoterms", compute="_compute_incoterm_id", store=True, readonly=False,
     )
 
     @api.depends("partner_id", "company_id")
