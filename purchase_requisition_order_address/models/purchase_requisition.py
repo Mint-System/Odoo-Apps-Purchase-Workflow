@@ -18,6 +18,7 @@ class PurchaseRequisition(models.Model):
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",
         compute="_compute_partner_order_id",
         store=True,
+        readonly=False,
     )
 
     @api.depends("vendor_id")
