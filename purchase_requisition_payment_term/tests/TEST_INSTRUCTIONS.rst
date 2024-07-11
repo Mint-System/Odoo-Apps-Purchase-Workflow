@@ -1,2 +1,3 @@
 - Open Contacts > Deco Addict, in the Sales & Purchase tab set the Payment Term field to 15 days
 - Open Purchase > Orders > Blanket Orders and create a new Blanket Order for Deco Addict, the payment term is carried from the contact
+- Create a New Quotation and Purchase Order, the Payment Terms are carried from the Blanket Order
