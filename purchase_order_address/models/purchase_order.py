@@ -29,10 +29,3 @@ class PurchaseOrder(models.Model):
                 order.partner_order_id = addr["order"]
             else:
                 order.partner_order_id = False
-
-    def action_rfq_send(self):
-        action = super().action_rfq_send()
-        ctx = action["context"]
-        ctx["default_partner_ids"] = [self.partner_order_id.id]
-        action.update({"context": ctx})
-        return action
