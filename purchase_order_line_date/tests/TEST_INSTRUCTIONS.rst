@@ -1,0 +1,4 @@
+- Open Purchase > Orders > Request for Quotations
+- Create a new Request, set the expected arrival date on product lines
+- The Expected Arrival field on the form will be updated according to the latest date set on product line
+- Confirm the order, verify that the delivery date is copied from the quotation

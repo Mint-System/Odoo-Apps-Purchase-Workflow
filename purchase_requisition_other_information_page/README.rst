@@ -2,19 +2,18 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-============================
-Purchase Order Line Position
-============================
+===========================================
+Purchase Requisition Other Information Page
+===========================================
 
-Use purchase order line position for deliveries and outgoing invoices.
+Adds and "Other Information" tab to the purchase agreement form.
 
-For a detailed documentation have a look at
-https://www.odoo-wiki.org/purchase-order-line-position.html
+For a detailed documentation have a look at https://www.odoo-wiki.org/.
 
-Usage
-~~~~~
-
-Use the ``purchase_order_id.get_position(product_id)`` method in linked reports.
+.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/icon-box.png
+  :height: 100
+  :width: 100
+  :alt: Icon
 
 Configuration
 ~~~~~~~~~~~~~

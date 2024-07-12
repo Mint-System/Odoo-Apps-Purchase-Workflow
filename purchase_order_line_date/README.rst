@@ -2,19 +2,14 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-============================
-Purchase Order Line Position
-============================
+========================
+Purchase Order Line Date
+========================
 
-Use purchase order line position for deliveries and outgoing invoices.
+This module ensure that line order date are propagated to stock pickings.
 
 For a detailed documentation have a look at
-https://www.odoo-wiki.org/purchase-order-line-position.html
-
-Usage
-~~~~~
-
-Use the ``purchase_order_id.get_position(product_id)`` method in linked reports.
+https://www.odoo-wiki.org/purchase-order-line-date.html
 
 Configuration
 ~~~~~~~~~~~~~

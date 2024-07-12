@@ -1,0 +1,3 @@
+- Open Purchase > Orders > Requests for Quotation
+- Create a new Request for Quotation
+- Under the Notes tab create a new note and confirm the order

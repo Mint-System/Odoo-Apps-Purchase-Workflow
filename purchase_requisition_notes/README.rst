@@ -2,19 +2,13 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-============================
-Purchase Order Line Position
-============================
+==========================
+Purchase Requisition Notes
+==========================
 
-Use purchase order line position for deliveries and outgoing invoices.
+Add notes on purchase agreement and copy them to purchase orders.
 
-For a detailed documentation have a look at
-https://www.odoo-wiki.org/purchase-order-line-position.html
-
-Usage
-~~~~~
-
-Use the ``purchase_order_id.get_position(product_id)`` method in linked reports.
+For a detailed documentation have a look at https://www.odoo-wiki.org/purchase-requisition-notes.html
 
 Configuration
 ~~~~~~~~~~~~~
