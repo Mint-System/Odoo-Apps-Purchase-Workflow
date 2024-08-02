@@ -9,7 +9,7 @@
     "version": "16.0.1.0.0",
     "license": "AGPL-3",
     "depends": [
-        "purchase_order_partner_incoterm",
+        "purchase_partner_incoterm",
         "purchase_requisition",
     ],
     "data": ["views/purchase_requisition_views.xml"],
