@@ -1,0 +1,3 @@
+- Open Purchase > Orders > Blanket orders
+- Create a new Blanket Order for Azure Interior with two products Storage Box and Desk Combination and set prices
+- In the Purchase Order form, the total with and without taxes in shown
