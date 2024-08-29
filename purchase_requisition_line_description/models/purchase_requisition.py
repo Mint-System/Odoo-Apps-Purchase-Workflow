@@ -18,6 +18,7 @@ class PurchaseRequisitionLine(models.Model):
     @api.depends("product_id", "requisition_id.vendor_id")
     def _compute_product_description_variants(self):
         for line in self:
+            name = ""
             hide_ref = ast.literal_eval(
                 line.env["ir.config_parameter"]
                 .sudo()
@@ -33,33 +34,27 @@ class PurchaseRequisitionLine(models.Model):
 
             # Set supplier product code as name
             if supplier_info.product_code and not hide_ref:
-                line.product_description_variants = (
+                name = (
                     "[" + supplier_info.product_code + "] "
                 )
-            else:
-                line.product_description_variants = ""
 
             # Append purchase description to name
             if line.product_id.description_purchase:
                 product = line.product_id.with_context(
                     lang=line.requisition_id.vendor_id.lang
                 )
-                line.product_description_variants += product.description_purchase
+                name += product.description_purchase
 
             # If no purchase description is given, set name
             elif line.product_id:
-                line.product_description_variants += line.product_id.name
+                name += line.product_id.name
 
             # Append supplier product name
             if supplier_info.product_name:
-                line.product_description_variants += "\n" + supplier_info.product_name
+                name += "\n" + supplier_info.product_name
+            line.product_description_variants = name
 
-    # def _prepare_purchase_order_line(self, name, product_qty=0.0, price_unit=0.0, taxes_ids=False):
-    #     # Ensure that the description is only set once
-    #     res = super(PurchaseRequisitionLine, self)._prepare_purchase_order_line(name, product_qty, price_unit, taxes_ids)
-
-    #     # Check if the description already contains the product description variants
-    #     if self.product_description_variants not in res['name']:
-    #         res['name'] += '\n' + self.product_description_variants
-
-    #     return res
+    def _prepare_purchase_order_line(self, name, product_qty=0.0, price_unit=0.0, taxes_ids=False):
+        res = super(PurchaseRequisitionLine, self)._prepare_purchase_order_line(name, product_qty, price_unit, taxes_ids)
+        res['name'] = self.product_description_variants
+        return res
