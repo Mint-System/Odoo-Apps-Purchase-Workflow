@@ -8,8 +8,8 @@ _logger = logging.getLogger(__name__)
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    note_header = fields.Html(compute="_compute_notes", store=True)
-    note_footer = fields.Html(compute="_compute_notes", store=True)
+    note_header = fields.Html(compute="_compute_notes", store=True, readonly=False)
+    note_footer = fields.Html(compute="_compute_notes", store=True, readonly=False)
 
     @api.depends("requisition_id")
     def _compute_notes(self):
