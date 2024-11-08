@@ -1,0 +1,2 @@
+- Open Purchase > Orders > Blanket Orders
+- Open a Blanket Order, the Other Information tab is now shown
