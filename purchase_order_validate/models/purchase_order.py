@@ -11,8 +11,8 @@ class PurchaseOrder(models.Model):
 
     def button_confirm(self):
         self.validate()
-        return super(self).button_confirm()
+        return super().button_confirm()
 
     def action_rfq_send(self):
         self.validate()
-        return super(self).action_rfq_send()
+        return super().action_rfq_send()
