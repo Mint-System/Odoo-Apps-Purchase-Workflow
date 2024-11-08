@@ -16,3 +16,4 @@ class PurchaseOrder(models.Model):
                 order.incoterm_id = order.requisition_id.incoterm_id
             elif not order.requisition_id:
                 order.incoterm_id = False
+            return
