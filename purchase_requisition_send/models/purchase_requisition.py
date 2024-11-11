@@ -9,11 +9,15 @@ class PurchaseRequisition(models.Model):
     _inherit = "purchase.requisition"
 
     name = fields.Char(default=_("New"))
+
+    # Adding ondelete policies to both fields
     state = fields.Selection(
-        selection_add=[("sent"), ("ongoing",)], ondelete={"sent": "cascade"}
+        selection_add=[("sent", "Sent"), ("ongoing", "Ongoing")],
+        ondelete={"sent": "cascade", "ongoing": "cascade"},
     )
     state_blanket_order = fields.Selection(
-        selection_add=[("sent"), ("ongoing",)], ondelete={"sent": "cascade"}
+        selection_add=[("sent", "Sent"), ("ongoing", "Ongoing")],
+        ondelete={"sent": "cascade", "ongoing": "cascade"},
     )
 
     @api.model
@@ -32,11 +36,9 @@ class PurchaseRequisition(models.Model):
 
     def action_order_send(self):
         self.ensure_one()
-
         template = self.env.ref(
             "purchase_requisition_send.email_template_purchase_requisition"
         )
-
         subject = template._render_field("subject", [self.id])[self.id]
         body_html = template._render_field("body_html", [self.id])[self.id]
 
