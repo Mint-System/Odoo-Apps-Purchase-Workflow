@@ -1,0 +1,5 @@
+- Open Deco Addict contact, add a Delivery Address
+- Open Purchase > Orders > Requests for Quotation
+- Create a new RFQ for Deco Addict, the Delivery Address field was added and the address from the contact is used
+- Confirm the Order, it is also copied to the Purchase Order
+- Print the Purchase Order report, the new field Shipping Address is add there with the delivery address shown
