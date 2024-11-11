@@ -1,0 +1,10 @@
+- Open Settings > Technical > Email Templates
+- Open the template Purchase Contract: Send by email and set the To (Partner) as {{ object.partner_order_id.id }}
+- Open contact for Azure Interior, set the Order Address and its email
+- Open Purchase > Orders > Blanket Orders
+- Create a new Blanket Order
+- When details are filled in, press "Send by email" button
+- A dialog will open for editing the email, edit accrodingly and press send, the recipiend is automatically set to Order Address
+- The email will be sent and is shown in Chatter
+- The status of the Blanket Order is changed to "Bid Selection"
+- Proceed to create the RFQ and Purchase Order, if email is sent at any stage, it will be sent to Order Address contact
