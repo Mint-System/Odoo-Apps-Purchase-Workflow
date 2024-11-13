@@ -1,0 +1,3 @@
+- Open Purchases > Orders > Purchase Orders and create a new order
+- Open Other Information tab and clear the Buyer field
+- Confirm the order and press Send PO by Email, the Validation error will be shown
