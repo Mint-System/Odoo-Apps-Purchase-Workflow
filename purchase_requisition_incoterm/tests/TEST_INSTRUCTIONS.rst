@@ -1,0 +1,4 @@
+- Open contact for Deco Addict, and in the Sales&Purchase tab set the default incoterm COST AND FREIGHT
+- Open Purchase > Orders > Blanket Orders
+- Under the Other Information tab the default incoterm can be seen, it can also be changed
+- Confirm the order, the Purchase Order will have the incoterm from the Blanket Order
