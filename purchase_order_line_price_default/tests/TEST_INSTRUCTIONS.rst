@@ -1,0 +1,5 @@
+- Open Contacts and create a new company contact "Test"
+- Open Purchase > Products > Products and create a New product "Test", set its price to 10$
+- Create a new Purchase Order for product "Test" and vendor "Test", the default price will be zero
+- Add the product "Test" to the Vendor Pricelist for vendor "Test" and set the price to 1$
+- Create a new Purchase Order for product "Test" and vendor "Test", the default price will become 1$
