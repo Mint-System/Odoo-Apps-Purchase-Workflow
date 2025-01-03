@@ -10,7 +10,7 @@
                 expr="//field[@name='order_line']/tree[1]/field[@name='sequence']"
                 position="after"
             >
-        <field name="position" column_invisible="1" />
+        <field name="position" />
       </xpath>
     </field>
   </record>
