@@ -3,7 +3,7 @@
     "summary": """
         Caclulate taxed and untaxed total for order and lines.
     """,
-    "author": "Mint System GmbH, Odoo Community Association (OCA)",
+    "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch",
     "category": "Purchase",
     "version": "14.0.1.3.0",

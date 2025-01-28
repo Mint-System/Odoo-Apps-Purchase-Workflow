@@ -3,7 +3,7 @@
     "summary": """
         Add vendor reference field to purchase agreement.
     """,
-    "author": "Mint System GmbH, Odoo Community Association (OCA)",
+    "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch",
     "category": "Purchase",
     "version": "14.0.1.1.0",

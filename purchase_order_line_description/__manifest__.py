@@ -3,7 +3,7 @@
     "summary": """
         This module sets to use only product's purchase description field on the purchase order lines.
     """,
-    "author": "Mint System GmbH, Odoo Community Association (OCA)",
+    "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch",
     "category": "Purchase",
     "version": "14.0.2.0.1",
