@@ -3,7 +3,7 @@
     "summary": """
         Set shipping partner of first linked sale order as consigment owner.
     """,
-    "author": "Mint System GmbH, Odoo Community Association (OCA)",
+    "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch",
     "category": "Purchase",
     "version": "15.0.1.0.0",
