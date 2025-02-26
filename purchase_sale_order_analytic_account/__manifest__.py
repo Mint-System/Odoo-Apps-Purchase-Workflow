@@ -1,0 +1,16 @@
+{
+    "name": "Purchase Sale Order Analytic Account",
+    "summary": """
+        Copy analytic account from linked sale order.
+    """,
+    "author": "Mint System GmbH",
+    "website": "https://www.mint-system.ch",
+    "category": "Purchase",
+    "version": "17.0.1.0.0",
+    "license": "AGPL-3",
+    "depends": ["sale_purchase"],
+    "installable": True,
+    "application": False,
+    "auto_install": False,
+    "images": ["images/screen.png"],
+}
