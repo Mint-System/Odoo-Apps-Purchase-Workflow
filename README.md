@@ -9,6 +9,7 @@
 | [purchase_order_partner_shipping](purchase_order_partner_shipping) |         Alternative shipping address for purchase orders. |
 | [purchase_order_validate](purchase_order_validate) |         Validate purchase order before sending or confirming. |
 | [purchase_requisition_incoterm](purchase_requisition_incoterm) |         Set incoterm on purchase contract. |
+| [purchase_requisition_line_description](purchase_requisition_line_description) |         Set description field on purchase contract lines from purchase description. |
 | [purchase_requisition_order_address](purchase_requisition_order_address) |         Set order address on purchase agreement and copy to order. |
 | [purchase_requisition_other_information_page](purchase_requisition_other_information_page) |         Adds and "Other Information" tab to the purchase agreement form. |
 | [purchase_requisition_payment_term](purchase_requisition_payment_term) |         Set payment term on purchase contract. |
