@@ -16,3 +16,4 @@
 | [purchase_requisition_reference](purchase_requisition_reference) |         Add vendor reference field to purchase agreement. |
 | [purchase_requisition_send](purchase_requisition_send) |         Add send action to purchase contract. |
 | [purchase_sale_order_analytic_account](purchase_sale_order_analytic_account) |         Copy analytic account from linked sale order. |
+| [purchase_stock_sale_owner](purchase_stock_sale_owner) |         Set shipping partner of first linked sale order as consigment owner. |
