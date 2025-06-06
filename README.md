@@ -6,6 +6,7 @@
 | [purchase_order_line_date](purchase_order_line_date) |         This module ensure that line order date are propagated to stock pickings. |
 | [purchase_order_line_position](purchase_order_line_position) |         Use purchase order line position for deliveries and outgoing invoices. |
 | [purchase_order_line_price_default](purchase_order_line_price_default) |         Set price to zero if seller is not available. |
+| [purchase_order_partner_incoterm](purchase_order_partner_incoterm) |         Adds new field to partner form for registering the default pruchase incoterms. |
 | [purchase_order_partner_shipping](purchase_order_partner_shipping) |         Alternative shipping address for purchase orders. |
 | [purchase_order_validate](purchase_order_validate) |         Validate purchase order before sending or confirming. |
 | [purchase_requisition_incoterm](purchase_requisition_incoterm) |         Set incoterm on purchase contract. |
