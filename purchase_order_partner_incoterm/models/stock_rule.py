@@ -7,5 +7,5 @@ class StockRule(models.Model):
     def _prepare_purchase_order(self, company_id, origins, values):
         res = super(StockRule, self)._prepare_purchase_order(company_id, origins, values)
         values = values[0]
-        res['incoterm_id'] = values['supplier'].name.purchase_incoterm_id.id
+        res['incoterm_id'] = values['supplier'].partner_id.purchase_incoterm_id.id
         return res
