@@ -12,7 +12,7 @@
         />
         <field name="arch" type="xml">
             <field name="product_description_variants" position="attributes">
-                <attribute name="attrs">{}</attribute>
+                <attribute name="readonly">0</attribute>
             </field>
         </field>
     </record>
