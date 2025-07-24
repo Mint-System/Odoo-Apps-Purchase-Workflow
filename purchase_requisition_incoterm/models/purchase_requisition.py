@@ -10,7 +10,6 @@ class PurchaseRequisition(models.Model):
 
     incoterm_id = fields.Many2one(
         "account.incoterms",
-        # compute="_compute_incoterm_id",
         store=True,
         readonly=False,
     )
