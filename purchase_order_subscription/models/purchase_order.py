@@ -11,8 +11,8 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     is_subscription = fields.Boolean(compute="_compute_is_subscription", store=True, index=True)
-    recurrence_id = fields.Many2one(
-        "sale.temporal.recurrence",
+    plan_id = fields.Many2one(
+        "sale.subscription.plan",
         ondelete="restrict",
         readonly=False,
         store=True,
@@ -34,11 +34,11 @@ class PurchaseOrder(models.Model):
     end_date = fields.Date(tracking=True)
     last_invoice_date = fields.Date(compute="_compute_last_invoice_date")
 
-    @api.depends("recurrence_id")
+    @api.depends("plan_id")
     def _compute_is_subscription(self):
         """If recurrence is selelcted, the order becomes a subscription."""
         for order in self:
-            if not order.recurrence_id:
+            if not order.plan_id:
                 order.is_subscription = False
                 continue
             order.is_subscription = True
@@ -57,9 +57,9 @@ class PurchaseOrder(models.Model):
     def _compute_last_invoice_date(self):
         """Last invoice date is next invoice date minus the recurrence delta."""
         for order in self:
-            if order.recurrence_id:
+            if order.plan_id:
                 last_date = order.next_invoice_date and order.next_invoice_date - get_timedelta(
-                    order.recurrence_id.duration, order.recurrence_id.unit
+                    order.plan_id.billing_period_value, order.plan_id.billing_period_unit
                 )
                 if (
                     order.state in ["purchase", "done"]
@@ -85,7 +85,7 @@ class PurchaseOrder(models.Model):
             last_invoice_date = order.next_invoice_date or order.start_date
             if last_invoice_date:
                 order.next_invoice_date = last_invoice_date + get_timedelta(
-                    order.recurrence_id.duration, order.recurrence_id.unit
+                    order.plan_id.billing_period_value, order.plan_id.billing_period_unit
                 )
 
     def _recurring_purchase_domain(self, extra_domain=None):

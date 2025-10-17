@@ -6,27 +6,19 @@
         <field name="inherit_id" ref="purchase.purchase_order_form" />
         <field name="arch" type="xml">
             <field name="date_order" position="after">
-                <label name="recurrence_label" for="recurrence_id" />
+                <label name="recurrence_label" for="plan_id" />
                 <div class="o_row" name="recurrence_block">
-                    <field name="recurrence_id" options="{'no_create': True}" />
-                    <span
-                        attrs="{'invisible': [('recurrence_id', '=', False)]}"
-                    >until</span>
-                    <field
-                        name="end_date"
-                        attrs="{'invisible': [('recurrence_id', '=', False)]}"
-                    />
+                    <field name="plan_id" options="{'no_create': True}" />
+                    <span invisible="plan_id">until</span>
+                    <field name="end_date" invisible="plan_id" />
                 </div>
                 <field
                     name="next_invoice_date"
-                    attrs="{'invisible': ['|', ('recurrence_id', '=', False), ('state', 'not in', ['purchase','done'])]}"
+                    invisible="plan_id or state not in ('purchase','done')"
                 />
             </field>
             <field name="invoice_status" position="before">
-                <field
-                    name="start_date"
-                    attrs="{'invisible': [('recurrence_id', '=', False)]}"
-                />
+                <field name="start_date" invisible="plan_id" />
             </field>
         </field>
     </record>

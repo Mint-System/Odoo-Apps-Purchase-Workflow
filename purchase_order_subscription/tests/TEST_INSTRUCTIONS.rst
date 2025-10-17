@@ -1,0 +1,6 @@
+- Open a purchase order
+- Set a monthly recurrence
+- Set qty received and create invoice
+- Run the recuring order cron job
+- Check if the received qty has been increased by the ordered qty
+- Check if the next invoice date has benn increased by the plan duration
