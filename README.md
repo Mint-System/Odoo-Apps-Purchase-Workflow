@@ -13,5 +13,5 @@ git clone git@github.com:Mint-System/Odoo-Apps-Purchase-Workflow.git ./addons/pu
 ## Available modules
 
 | Module | Summary |
-| ------ | ------- |
-|        |         |
+| --- | --- |
+| [purchase_order_subscription](purchase_order_subscription) |         Setup recurring purchase orders. |
