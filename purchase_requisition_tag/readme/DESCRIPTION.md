@@ -1,0 +1,1 @@
+Set tags on purchase agreement and copy them to purchase order.
