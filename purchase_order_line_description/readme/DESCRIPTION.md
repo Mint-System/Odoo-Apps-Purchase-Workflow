@@ -1,0 +1,1 @@
+This module sets to use only product's purchase description field on the purchase order lines.
