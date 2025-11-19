@@ -2,14 +2,18 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-
 =========================
 Purchase Stock Sale Owner
 =========================
 
 Set shipping partner of first linked sale order as consigment owner.
 
-For a detailed documentation have a look at https://www.odoo-wiki.org/purchase-stock-sale-owner.html
+For a detailed documentation have a look at https://www.odoo-wiki.org/.
+
+.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/icon-box.png
+  :height: 100
+  :width: 100
+  :alt: Icon
 
 Configuration
 ~~~~~~~~~~~~~
@@ -17,9 +21,9 @@ Configuration
 * No additional configurations needed
 
 Maintainer
-~~~~~~~~~~
+==========
 
-.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/main/attachments/mint-system-logo.png
+.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/mint-system-logo.png
   :target: https://www.mint-system.ch
 
 This module is maintained by Mint System GmbH.

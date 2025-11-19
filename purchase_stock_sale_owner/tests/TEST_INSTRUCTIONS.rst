@@ -10,7 +10,7 @@ Prepare Purchase-To-Order:
 
 Prepare Traceability:
 
-- Go to Settings > Inventory > Traceability and active "Consignment".
+- Go to Settings > Inventory > Traceability and activate "Consignment".
 
 Prepare Client:
 
@@ -22,6 +22,4 @@ Sale product and check purchase to order:
 - Create sales order to the sale client for the prepared product.
 - Switch to the generated purchase order. 
 - Click "Confirm Order".
-- Check if picking belonging to purchase has sale client as "Assign Owner";
-
-- 
+- Check if picking belonging to purchase has sale client as "Assign Owner"
