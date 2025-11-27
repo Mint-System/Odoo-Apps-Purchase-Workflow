@@ -1,0 +1,1 @@
+Add notes on purchase agreement and copy them to purchase orders.
