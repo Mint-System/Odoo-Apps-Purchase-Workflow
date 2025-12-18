@@ -1,0 +1,1 @@
+Transfer purchase user from purchase contract to purchase order.

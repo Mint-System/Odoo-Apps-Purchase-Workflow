@@ -1,0 +1,3 @@
+- Open blanket order
+- Create new quotation
+- Check if Purchase Representative is transfered to Purchase Order as Buyer (in section "Other information")
