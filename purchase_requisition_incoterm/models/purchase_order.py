@@ -10,7 +10,7 @@ class PurchaseOrder(models.Model):
 
     @api.onchange("requisition_id")
     def _onchange_requisition_id(self):
-        super().onchange_partner_id()
+        super()._onchange_requisition_id()
         if self.requisition_id and self.requisition_id.incoterm_id:
             self.incoterm_id = self.requisition_id.incoterm_id
 
