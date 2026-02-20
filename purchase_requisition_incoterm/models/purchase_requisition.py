@@ -10,15 +10,16 @@ class PurchaseRequisition(models.Model):
 
     incoterm_id = fields.Many2one(
         "account.incoterms",
+        compute="_compute_incoterm_id",
         store=True,
         readonly=False,
     )
 
-    # @api.depends("vendor_id")
-    # def _compute_incoterm_id(self):
-    #     for requisition in self:
-    #         requisition.incoterm_id = (
-    #             requisition.vendor_id.purchase_incoterm_id
-    #             if requisition.vendor_id
-    #             else False
-    #         )
+    @api.depends("vendor_id")
+    def _compute_incoterm_id(self):
+        for requisition in self:
+            requisition.incoterm_id = (
+                requisition.vendor_id.purchase_incoterm_id
+                if requisition.vendor_id
+                else False
+            )
