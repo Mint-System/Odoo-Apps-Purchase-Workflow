@@ -1,0 +1,1 @@
+Use purchase order line position for deliveries and outgoing invoices.
