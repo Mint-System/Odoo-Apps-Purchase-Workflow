@@ -24,15 +24,17 @@
                         widget="monetary"
                         options="{'currency_field': 'currency_id'}"
                     />
-                    <div class="oe_subtotal_footer_separator oe_inline">
-                        <label for="amount_total" />
-                    </div>
+                    <label
+                        for="amount_total"
+                        class="oe_subtotal_footer_separator"
+                    />
                     <field
                         name="amount_total"
                         nolabel="1"
                         class="oe_subtotal_footer_separator"
                         widget="monetary"
                         options="{'currency_field': 'currency_id'}"
+                        decoration-bf="1"
                     />
                 </group>
             </field>
