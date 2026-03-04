@@ -25,9 +25,12 @@ class PurchaseOrderLine(models.Model):
             self.move_ids.date = fields.Datetime.to_datetime(
                 values.get("date_planned")
             ) + relativedelta(days=self.company_id.po_lead)
+
         return super().write(values)
 
-    def _update_move_date_deadline(self, new_date):
-        """Remove security lead time from date deadline."""
-        new_date = new_date - relativedelta(days=self.company_id.po_lead)
-        super()._update_move_date_deadline(new_date)
+    # def _update_move_date_deadline(self, new_date):
+    #     _logger.warning(f"#### _update_move_date_deadline called ")
+    #     _logger.warning(f"#### new date: {new_date}")
+    #     """Remove security lead time from date deadline."""
+    #     new_date = new_date - relativedelta(days=self.company_id.po_lead)
+    #     super()._update_move_date_deadline(new_date)
