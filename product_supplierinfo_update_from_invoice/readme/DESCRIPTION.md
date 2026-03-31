@@ -1,0 +1,1 @@
+Updates the product's vendor price with the price set in a supplier invoice.
