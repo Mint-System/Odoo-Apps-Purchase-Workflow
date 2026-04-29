@@ -27,7 +27,9 @@ class AccountMoveLine(models.Model):
                 and self.purchase_order_id.date_order.date()
                 or fields.Date.context_today(self),
                 uom_id=self.product_uom_id,
-                params=self.purchase_line_id._get_select_sellers_params(),
+                params=self.purchase_line_id._get_select_sellers_params()
+                if self.purchase_line_id 
+                else {},
             )
             if product_id
             else False
