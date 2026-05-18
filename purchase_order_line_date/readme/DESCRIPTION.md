@@ -1,0 +1,1 @@
+This module ensure that line order date are propagated to stock pickings.

@@ -1,17 +1,15 @@
 {
-    "name": "Purchase Order Line Position",
+    "name": "Purchase Order Line Date",
     "summary": """
-        Use purchase order line position for deliveries and outgoing invoices.
+        This module ensure that line order date are propagated to stock pickings.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch/",
-    "category": "Purchase",
+    "category": "Manufacturing",
     "version": "19.0.1.0.0",
     "license": "AGPL-3",
-    "depends": ["purchase"],
-    "data": ["views/purchase_order.xml"],
+    "depends": ["purchase_stock"],
     "installable": True,
     "application": False,
-    "auto_install": False,
     "images": ["images/screen.png"],
 }
