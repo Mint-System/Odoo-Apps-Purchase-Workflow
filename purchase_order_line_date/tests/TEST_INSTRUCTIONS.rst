@@ -1,4 +1,5 @@
 ## Date calculation for RFQs
+
 - Open Purchase > Orders > Request for Quotations
 - Create a new Request, the proposed product line arrival dates are today + the lead time defined in the products purchase tab
 - Set the expected arrival date on product lines (> 1 line items)
@@ -6,6 +7,7 @@
 - Confirm the order, in the generated transfer the field stock.picking date_scheduled is set according to sale.order date_planned and stock.move dates are set according to purchase.order.line date_planned
 
 ## Date processing for existing purchase orders
+
 - Open Purchase > Orders > Purchase Orders
 - Choose or generate a Sale Order with > 1 line item
 - The linked Receipt has the same Scheduled Dates as the Purchase Order
