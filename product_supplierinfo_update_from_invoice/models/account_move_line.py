@@ -2,7 +2,7 @@
 
 import logging
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 _logger = logging.getLogger(__name__)
 
@@ -10,15 +10,11 @@ _logger = logging.getLogger(__name__)
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-
-    can_update_product_supplierinfo = fields.Boolean(
-        compute="_compute_can_update_product_supplierinfo",
-        store=False
-    )
+    can_update_product_supplierinfo = fields.Boolean(compute="_compute_can_update_product_supplierinfo", store=False)
 
     def _get_supplierinfo(self):
         self.ensure_one()
-        product_id=self.product_id
+        product_id = self.product_id
         product_supplierinfo = (
             product_id._select_seller(
                 partner_id=self.partner_id,
@@ -27,15 +23,12 @@ class AccountMoveLine(models.Model):
                 and self.purchase_order_id.date_order.date()
                 or fields.Date.context_today(self),
                 uom_id=self.product_uom_id,
-                params=self.purchase_line_id._get_select_sellers_params()
-                if self.purchase_line_id 
-                else {},
+                params=self.purchase_line_id._get_select_sellers_params() if self.purchase_line_id else {},
             )
             if product_id
             else False
         )
         return product_supplierinfo
-
 
     def action_update_product_supplierinfo(self):
         self.ensure_one()
@@ -62,16 +55,10 @@ class AccountMoveLine(models.Model):
         for line in self:
             # We need this condition because in some situations
             # the onchange methods can fail.
-            if (
-                not line._origin.id
-                or not line.product_id
-                or not line.partner_id
-                or not line.price_unit
-            ):
+            if not line._origin.id or not line.product_id or not line.partner_id or not line.price_unit:
                 line.can_update_product_supplierinfo = False
                 continue
             product_supplierinfo = line._get_supplierinfo()
             line.can_update_product_supplierinfo = bool(
-                not product_supplierinfo
-                or product_supplierinfo.price != line.price_unit
+                not product_supplierinfo or product_supplierinfo.price != line.price_unit
             )

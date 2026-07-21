@@ -1,0 +1,17 @@
+{
+    "name": "Purchase Order Notes",
+    "summary": """
+        Header and footer note fields for purchase order.
+    """,
+    "author": "Mint System GmbH",
+    "website": "https://www.mint-system.ch/",
+    "category": "Purchase",
+    "version": "18.0.1.0.0",
+    "license": "AGPL-3",
+    "depends": ["purchase"],
+    "data": ["views/purchase_order_form.xml"],
+    "installable": True,
+    "application": False,
+    "auto_install": False,
+    "images": ["images/screen.png"],
+}

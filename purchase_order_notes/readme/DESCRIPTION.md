@@ -1,0 +1,1 @@
+Header and footer note fields for purchase order.
