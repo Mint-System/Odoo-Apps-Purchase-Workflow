@@ -8,12 +8,6 @@ _logger = logging.getLogger(__name__)
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    # @api.onchange("requisition_id")
-    # def _onchange_requisition_id(self):
-    #     super()._onchange_requisition_id()
-    #     if self.requisition_id and self.requisition_id.incoterm_id:
-    #         self.incoterm_id = self.requisition_id.incoterm_id
-
 
     def _apply_requisition_incoterm(self):
         for order in self:

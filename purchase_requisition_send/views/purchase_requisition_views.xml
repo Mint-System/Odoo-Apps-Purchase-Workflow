@@ -23,13 +23,13 @@
 
             <field name="state_blanket_order" position="attributes">
                 <attribute
-                    name="invisible"
-                >state not in ['draft', 'sent', 'ongoing', 'done']</attribute>
+                    name="statusbar_visible"
+                >'draft', 'sent', 'ongoing', 'done'</attribute>
             </field>
             <field name="state" position="attributes">
                 <attribute
-                    name="invisible"
-                >state not in ['draft', 'sent', 'in_progress', 'open', 'done']</attribute>
+                    name="statusbar_visible"
+                >'draft', 'sent', 'in_progress', 'open', 'done'</attribute>
             </field>
 
             <button name="action_draft" position="attributes">
@@ -53,3 +53,5 @@
     </record>
 
 </odoo>
+
+
