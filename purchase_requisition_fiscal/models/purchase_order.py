@@ -15,7 +15,6 @@ class PurchaseOrder(models.Model):
 
     @api.onchange('requisition_id')
     def _onchange_requisition_id(self):
-        _logger.warning("#### CALLED")
         res = super()._onchange_requisition_id()
         if self.requisition_id and self.requisition_id.fiscal_position_id:
             self.fiscal_position_id = self.requisition_id.fiscal_position_id
@@ -25,6 +24,13 @@ class PurchaseOrder(models.Model):
             )._get_fiscal_position(self.partner_id)
         else:
             self.fiscal_position_id = False
+        return res
+
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        res = super().onchange_partner_id()
+        if self.requisition_id and self.requisition_id.fiscal_position_id:
+            self.fiscal_position_id = self.requisition_id.fiscal_position_id
         return res
 
 
@@ -39,3 +45,14 @@ class PurchaseOrder(models.Model):
                 )._get_fiscal_position(order.partner_id)
             else:
                 order.fiscal_position_id = False
+
+
+
+    @api.model
+    def default_get(self, fields_list):
+        vals = super().default_get(fields_list)
+        if vals.get('requisition_id') and 'fiscal_position_id' in fields_list:
+            requisition = self.env['purchase.requisition'].browse(vals['requisition_id'])
+            if requisition.fiscal_position_id:
+                vals['fiscal_position_id'] = requisition.fiscal_position_id.id
+        return vals
