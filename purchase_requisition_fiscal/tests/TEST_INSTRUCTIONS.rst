@@ -2,5 +2,9 @@
 - Open Purchase > Orders > Blanket Orders
 - Create a new Blanket Order for Deco Addict
 - Under the Other Information tab the Fiscal Position is set from the contact
-- Confirm the order, and get a New Quotation
-- The Fiscal Position info is carried also to the RFQ and Purchase Order
+- Change the fiscal position to different value
+- Confirm the blanket order
+- Create New Quotation with vendor "Deco Addict"
+- The Fiscal Position info is set from the vendor fiscal position
+- Add the Blanket Order to purchase order
+- The Fiscal Position info is changed to the fiscal position of blanket order
