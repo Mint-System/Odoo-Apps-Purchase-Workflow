@@ -69,6 +69,7 @@ class PurchaseRequisitionLine(models.Model):
         "account.tax",
         string="Taxes",
         domain=["|", ("active", "=", False), ("active", "=", True)],
+        compute="_compute_tax_id",
     )
     price_subtotal = fields.Monetary(
         compute="_compute_amount", string="Subtotal", store=True
@@ -96,7 +97,7 @@ class PurchaseRequisitionLine(models.Model):
                 lambda r: r.company_id == line.env.company
             )
             line.taxes_id = fpos.map_tax(
-                taxes, line.product_id, line.requisition_id.vendor_id
+                taxes
             )
 
     @api.depends("product_uom_id", "price_unit", "taxes_id")
