@@ -70,6 +70,8 @@ class PurchaseRequisitionLine(models.Model):
         string="Taxes",
         domain=["|", ("active", "=", False), ("active", "=", True)],
         compute="_compute_tax_id",
+        store=True,
+        readonly=False,
     )
     price_subtotal = fields.Monetary(
         compute="_compute_amount", string="Subtotal", store=True
@@ -88,8 +90,8 @@ class PurchaseRequisitionLine(models.Model):
             line = line.with_company(line.company_id)
             fpos = (
                 line.requisition_id.fiscal_position_id
-                or line.requisition_id.fiscal_position_id.get_fiscal_position(
-                    line.requisition_id.vendor_id.id
+                or self.env['account.fiscal.position']._get_fiscal_position(
+                    line.requisition_id.vendor_id
                 )
             )
             # Filter taxes by company
