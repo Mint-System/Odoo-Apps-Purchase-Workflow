@@ -1,0 +1,3 @@
+- Create a new Purchase Blanket Order.
+- Save order.
+- Blanket order is named according to sequence for purchase blanket orders.
