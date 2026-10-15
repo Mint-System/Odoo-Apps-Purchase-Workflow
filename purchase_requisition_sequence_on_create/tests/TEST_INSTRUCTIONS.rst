@@ -1,0 +1,3 @@
+- Create a new Purchase Requisition.
+- Save requisition.
+- Requisition is named according to sequence for purchase requisitions.
