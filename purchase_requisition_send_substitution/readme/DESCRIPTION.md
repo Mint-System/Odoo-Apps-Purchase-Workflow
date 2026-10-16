@@ -1,0 +1,1 @@
+Chose mail subsitution template automatically.

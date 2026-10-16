@@ -1,0 +1,12 @@
+- Navigate to Settings > Technical > Email Templates.
+- Create two templates for requisition, one to use for state 'draft' and one to use for state 'ongoing'.
+- Edit template 'Purchase Contract: Send by email'.
+- On tab 'Substitution rules' create two new rules.
+- The first rule selects template for state 'draft' if domain is 'state = draft'. 
+- The second rule selects template for state 'ongoing' if domain is 'state = ongoing'.
+- Navigate to a purchase requisition with state 'draft'.
+- Create new email.
+- Confirm subject and body is chose from template for draft state.
+- Navigate to a purchase requisition with state 'ongoing'.
+- Create new email.
+- Confirm subject and body is chose from template for ongoing state.
