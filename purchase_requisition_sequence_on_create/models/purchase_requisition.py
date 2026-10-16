@@ -19,7 +19,7 @@ class PurchaseRequisition(models.Model):
                 company_id = vals.get("company_id")
                 if company_id:
                     sequence_obj = sequence_obj.with_company(company_id)
-                vals["name"] = sequence_obj.next_by_code("purchase.blanket.order") or "Draft"
+                vals["name"] = sequence_obj.next_by_code("purchase.requisition.blanket.order") or "Draft"
         return super().create(vals_list)
 
 
